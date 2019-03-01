@@ -41,7 +41,7 @@
       itemLayout="horizontal"
       :dataSource="data"
     >
-      <a-list-item slot="renderItem" slot-scope="item, index" style="background-color:#ffffff;">
+      <a-list-item slot="renderItem" slot-scope="item" style="background-color:#ffffff;">
         <a-list-item-meta
           description="Ant Design, a design language for background applications, is refined by Ant UED Team"
         >
@@ -54,26 +54,23 @@
 </template>
 
 <script>
-const data = [
-  {
-    title: 'Ant Design Title 1',
-  },
-  {
-    title: 'Ant Design Title 2',
-  },
-  {
-    title: 'Ant Design Title 3',
-  },
-  {
-    title: 'Ant Design Title 4',
-  },
-]
-import ECharts from 'vue-echarts/components/ECharts.vue'
 // 手动引入 ECharts 各模块来减小打包体积
 import 'echarts/lib/chart/bar'
 import 'echarts/lib/chart/line'
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/title'
+import ECharts from 'vue-echarts/components/ECharts.vue'
+const data = [
+  {
+    title: 'Ant Design Title 1'
+  }, {
+    title: 'Ant Design Title 2'
+  }, {
+    title: 'Ant Design Title 3'
+  }, {
+    title: 'Ant Design Title 4'
+  }
+]
 export default {
   name: 'home',
   components: {
@@ -154,7 +151,7 @@ export default {
             show: false,
             type: 'category',
             boundaryGap: false,
-            data: [ '1月', '2月', '3月','4月','5月','6月','7月','8月','19月','10月','11月','12月']
+            data: [ '1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '19月', '10月', '11月', '12月' ]
           }
         ],
         yAxis: [
@@ -232,7 +229,7 @@ export default {
             },
             type: 'category',
             boundaryGap: false,
-            data: [ '1月', '2月', '3月','4月','5月','6月','7月','8月','19月','10月','11月','12月']
+            data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '19月', '10月', '11月', '12月']
           }
         ],
         yAxis: [
