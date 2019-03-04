@@ -60,6 +60,8 @@ import 'echarts/lib/chart/line'
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/title'
 import ECharts from 'vue-echarts/components/ECharts.vue'
+import request from '../../utils/request'
+import mock from '../../mock/index'
 const data = [
   {
     title: 'Ant Design Title 1'
@@ -75,6 +77,26 @@ export default {
   name: 'home',
   components: {
     ECharts
+  },
+  created () {
+    request.get('/user?ID=12345')
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+    request.post('/user', {
+      firstName: 'Fred',
+      lastName: 'Flintstone'
+    })
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+    console.log(mock)
   },
   data () {
     return {
