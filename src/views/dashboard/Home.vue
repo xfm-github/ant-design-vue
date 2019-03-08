@@ -79,24 +79,24 @@ export default {
     ECharts
   },
   created () {
-    request.get('/user?ID=12345')
+    request.get('http://172.20.1.42:5001/dev/user?ID=12345')
       .then(function (response) {
+        console.log('成功返回mock')
         console.log(response)
       })
       .catch(function (error) {
         console.log(error)
       })
-    request.post('/user', {
-      firstName: 'Fred',
-      lastName: 'Flintstone'
-    })
-      .then(function (response) {
-        console.log(response)
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
-    console.log(mock)
+    // request.post('/user', {
+    //   firstName: 'Fred',
+    //   lastName: 'Flintstone'
+    // })
+    //   .then(function (response) {
+    //     console.log(response)
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error)
+    //   })
   },
   data () {
     return {

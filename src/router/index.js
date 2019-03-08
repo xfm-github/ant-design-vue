@@ -8,22 +8,51 @@ const routes = [
     path: '/',
     name: 'index',
     component: Layout,
-    redirect: '/home',
+    // redirect: '/home',
     children: [
       {
         path: '/home',
         name: 'home',
         component: () => import('../views/dashboard/Home.vue'),
-        meta: { title: '分析页', keepAlive: true, permission: ['dashboard'] }
+        meta: { title: '分析页', keepAlive: false, permission: ['dashboard'] }
+      }
+    ]
+  },
+  {
+    path: '/custManage',
+    name: 'custManage',
+    redirect: '/custManage/custName',
+    component: Layout,
+    children: [
+      {
+        path: 'custName',
+        name: 'custName',
+        component: () => import('../views/custManage/custName.vue'),
+        meta: { title: '账号管理', keepAlive: true }
       },
       {
-        path: '/about',
-        name: 'about',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ '../views/dashboard/About.vue'),
-        meta: { title: '列表页', keepAlive: false, permission: ['dashboard'] }
+        path: 'paramSet',
+        name: 'paramSet',
+        component: () => import('../views/custManage/component/paramSet.vue')
+      }
+    ]
+  },
+  {
+    path: '/customerManage',
+    name: 'customerManage',
+    component: Layout,
+    children: [
+      {
+        path: 'customerList',
+        name: 'customerList',
+        component: () => import('../views/customerManage/customerList.vue'),
+        meta: { title: '账号管理', keepAlive: true }
+      },
+      {
+        path: 'custDetail',
+        name: 'custDetail',
+        component: () => import('../views/customerManage/custDetail.vue'),
+        meta: { title: '账号详情', keepAlive: true }
       }
     ]
   }

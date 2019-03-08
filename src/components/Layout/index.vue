@@ -59,29 +59,11 @@ export default {
           title: '工作台'
         }, {
           key: '2',
-          title: 'Navigation 2',
+          title: '客户管理',
           children: [
             {
               key: '2.1',
-              title: 'Navigation 3',
-              children: [
-                {
-                  key: '2.1.1',
-                  title: 'Option 2.1.1'
-                }
-              ]
-            }
-          ]
-        }, {
-          key: '3',
-          title: 'Option 3'
-        }, {
-          key: '4',
-          title: 'Navigation 4',
-          children: [
-            {
-              key: '4.1',
-              title: 'Navigation 4'
+              title: '账号管理'
             }
           ]
         }

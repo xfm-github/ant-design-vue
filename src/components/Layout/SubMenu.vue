@@ -10,7 +10,7 @@
         v-if="!item.children"
         :key="item.key"
       >
-        <span>{{ item.title }}</span>
+        <router-link to="/customerManage/customerList"><span>{{ item.title }}</span></router-link>
       </a-menu-item>
       <sub-menu
         v-else

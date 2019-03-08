@@ -1,7 +1,7 @@
 // vue.config.js
 
-// const devUrl = '172.20.1.48:8080'
-const devUrl = '172.20.0.16:8080'
+const devUrl = '172.20.1.48:8080'
+// const devUrl = '172.20.0.16:8080'
 module.exports = {
   // 开发服务端配置
   devServer: {
